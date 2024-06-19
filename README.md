@@ -23,14 +23,14 @@ Variable Assignment
 Use परिवर्तन to assign values to variables.
 Example:
 
-sanskrit
+```sanskrit
 Copy code
 परिवर्तन(x, 5)
 Printing
 Use प्रदर्शयति to print values.
 Example:
 
-sanskrit
+```sanskrit
 Copy code
 परिवर्तन(x, 5)
 प्रदर्शयति(x)  # Prints 5
@@ -43,7 +43,7 @@ Less than or equal to: <=
 Greater than or equal to: >=
 Example:
 
-sanskrit
+```sanskrit
 Copy code
 परिवर्तन(x, 15)
 परिवर्तन(y, 10)
@@ -53,7 +53,7 @@ Conditional Statements
 Use यदि for if and अन्यथा for else.
 Example:
 
-sanskrit
+```sanskrit
 Copy code
 परिवर्तन(x, 15)
 परिवर्तन(y, 10)
@@ -63,7 +63,7 @@ Loops
 Use यावत् for while loops.
 Example:
 
-sanskrit
+```sanskrit
 Copy code
 परिवर्तन(i, 1)
 यावत् (i <= 5) {
@@ -74,7 +74,7 @@ String Literals
 Strings are enclosed in double quotes.
 Example:
 
-sanskrit
+```sanskrit
 Copy code
 परिवर्तन(message, "Hello, World!")
 प्रदर्शयति(message)
@@ -114,7 +114,7 @@ Clone the repository:
 
 bash
 Copy code
-git clone https://github.com/yourusername/SanskritLang.git
+git clone https://github.com/meghaos/Sanskrit.git
 cd SanskritLang
 Ensure you have Python 3 installed.
 
