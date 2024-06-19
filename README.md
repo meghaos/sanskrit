@@ -150,4 +150,4 @@ Contribution
 Feel free to contribute to this project by submitting issues or pull requests. Any contributions are welcome!
 
 License
-This project is licensed under the MIT License.
+This project is licensed under the GNU GENERAL PUBLIC LICENSE Version 2.
