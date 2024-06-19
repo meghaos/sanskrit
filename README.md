@@ -19,7 +19,7 @@ Example:
 प्रदर्शयति(गुणयति(a, b))  # 200
 प्रदर्शयति(विभजति(b, a))  # 2.0
 
-Variable Assignment
+#### Variable Assignment
 Use परिवर्तन to assign values to variables.
 Example:
 
@@ -28,12 +28,14 @@ Copy code
 परिवर्तन(x, 5)
 Printing
 Use प्रदर्शयति to print values.
+
 Example:
 
 ```sanskrit
 Copy code
 परिवर्तन(x, 5)
 प्रदर्शयति(x)  # Prints 5
+
 Comparison Operations
 Equal to: ==
 Not equal to: !=
@@ -41,6 +43,7 @@ Less than: <
 Greater than: >
 Less than or equal to: <=
 Greater than or equal to: >=
+
 Example:
 
 ```sanskrit
@@ -49,8 +52,10 @@ Copy code
 परिवर्तन(y, 10)
 यदि (x == y) प्रदर्शयति("x == y") अन्यथा प्रदर्शयति("x != y")
 यदि (x != y) प्रदर्शयति("x != y")
+
 Conditional Statements
 Use यदि for if and अन्यथा for else.
+
 Example:
 
 ```sanskrit
@@ -59,8 +64,10 @@ Copy code
 परिवर्तन(y, 10)
 यदि (x > y) प्रदर्शयति("x > y")
 अन्यथा प्रदर्शयति("x <= y")
+
 Loops
 Use यावत् for while loops.
+
 Example:
 
 ```sanskrit
@@ -70,16 +77,20 @@ Copy code
     प्रदर्शयति(i)
     परिवर्तन(i, योजयति(i, 1))
 }
+
 String Literals
 Strings are enclosed in double quotes.
+
 Example:
 
 ```sanskrit
 Copy code
 परिवर्तन(message, "Hello, World!")
 प्रदर्शयति(message)
+
 Block Statements
 Group multiple statements within {}.
+
 Example:
 
 sanskrit
@@ -89,6 +100,7 @@ Copy code
     प्रदर्शयति(x)
     परिवर्तन(x, योजयति(x, 1))
 }
+
 Comprehensive Example
 Here is a comprehensive example using all the features:
 
@@ -109,6 +121,7 @@ Copy code
     परिवर्तन(x, योजयति(x, 1))
 }
 प्रदर्शयति(x)  # 11
+
 Installation
 Clone the repository:
 
