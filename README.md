@@ -70,7 +70,7 @@ Here are some example codes to demonstrate the features of the language:
 प्रदर्शयति(विभजति(b, a))  # 2.0
 ```
 
-##### Comparisons and Conditionals
+#### Comparisons and Conditionals
 ```sanskrit
 परिवर्तन(x, 15)
 परिवर्तन(y, 10)
@@ -81,7 +81,7 @@ Here are some example codes to demonstrate the features of the language:
 यदि (x >= 15) प्रदर्शयति("x >= 15")  # x >= 15
 यदि (y <= 10) प्रदर्शयति("y <= 10")  # y <= 10
 ```
-###### Loops
+#### Loops
 ```sanskrit
 परिवर्तन(i, 1)
 यावत् (i <= 5) {
@@ -89,7 +89,7 @@ Here are some example codes to demonstrate the features of the language:
     परिवर्तन(i, योजयति(i, 1))
 }
 ```
-###### String Literals and Complex Conditions
+#### String Literals and Complex Conditions
 ```sanskrit
 परिवर्तन(x, 5)
 प्रदर्शयति("Initial value of x is:")
@@ -104,7 +104,7 @@ Here are some example codes to demonstrate the features of the language:
 प्रदर्शयति("New value of x is:")
 प्रदर्शयति(x)  # 15
 ```
-Running the Interpreter
+#### Running the Interpreter
 Run your interpreter script:
 ```sh
 Copy code
