@@ -98,8 +98,7 @@ Here are some example codes to demonstrate the features of the language:
 ```
 Running the Interpreter
 Run your interpreter script:
-```
-sh
+```sh
 Copy code
 python interpreter.py
 ```
@@ -109,7 +108,7 @@ Make sure the test.s file contains your Sanskrit code. The interpreter will read
 License
 This project is licensed under the GNU General Public License Version 2. See the LICENSE file for details.
 
-Contributing
+<h2>Contributing<h2>
 Contributions are welcome! Please create a pull request with your changes and ensure that your code follows the existing coding style.
 
 Acknowledgements
