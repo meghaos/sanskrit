@@ -53,16 +53,17 @@ Create a file named `test.s` and write your Sanskrit code in it. Then run the in
 Here are some example codes to demonstrate the features of the language:
 
 #### Arithmetic Operations
-
+```sanskrit
 परिवर्तन(a, 10)
 परिवर्तन(b, 20)
 प्रदर्शयति(योजयति(a, b))  # 30
 प्रदर्शयति(वियोजयति(b, a))  # 10
 प्रदर्शयति(गुणयति(a, b))  # 200
 प्रदर्शयति(विभजति(b, a))  # 2.0
+```
 
 ##### Comparisons and Conditionals
-
+```sanskrit
 परिवर्तन(x, 15)
 परिवर्तन(y, 10)
 यदि (x == y) प्रदर्शयति("x == y") अन्यथा प्रदर्शयति("x != y")  # x != y
@@ -71,17 +72,17 @@ Here are some example codes to demonstrate the features of the language:
 यदि (x < y) प्रदर्शयति("x < y") अन्यथा प्रदर्शयति("x >= y")  # x >= y
 यदि (x >= 15) प्रदर्शयति("x >= 15")  # x >= 15
 यदि (y <= 10) प्रदर्शयति("y <= 10")  # y <= 10
-
+```
 ###### Loops
-
+```sanskrit
 परिवर्तन(i, 1)
 यावत् (i <= 5) {
     प्रदर्शयति(i)
     परिवर्तन(i, योजयति(i, 1))
 }
-
-####### String Literals and Complex Conditions
-
+```
+###### String Literals and Complex Conditions
+```sanskrit
 परिवर्तन(x, 5)
 प्रदर्शयति("Initial value of x is:")
 प्रदर्शयति(x)  # 5
@@ -94,13 +95,15 @@ Here are some example codes to demonstrate the features of the language:
 
 प्रदर्शयति("New value of x is:")
 प्रदर्शयति(x)  # 15
-
+```
 Running the Interpreter
 Run your interpreter script:
-
+```
 sh
 Copy code
 python interpreter.py
+```
+
 Make sure the test.s file contains your Sanskrit code. The interpreter will read this file, parse the code, and execute it.
 
 License
