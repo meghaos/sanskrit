@@ -30,6 +30,9 @@ These are just a few examples of the growing interest in using Sanskrit for natu
 - **Loops**: `यावत्`
 - **String Literals**: `""` Strings are enclosed in double quotes.
 - **Block Statements**: `{}`
+- **Break and continue statements**: `ब्रेक` and `कंटिन्यू`
+- **Arrays and nested arrays**: `[0,1,2,3]` and `[[1, 2, 3], [4, 5, 6], [7, 8, 9]]`
+- **Mixed data types in arrays**: `INT`, `FLOAT` and `STRING`
 
 ## Installation
 
@@ -70,6 +73,14 @@ Here are some example codes to demonstrate the features of the language:
 प्रदर्शयति(विभजति(b, a))  # 2.0
 ```
 
+#### Variable Assignment and Printing
+```sanskrit
+परिवर्तन(x, 5)
+प्रदर्शयति(x)  # 5
+परिवर्तन(x, 15)
+प्रदर्शयति(x)  # 15
+```
+
 #### Comparisons and Conditionals
 ```sanskrit
 परिवर्तन(x, 15)
@@ -104,6 +115,82 @@ Here are some example codes to demonstrate the features of the language:
 प्रदर्शयति("New value of x is:")
 प्रदर्शयति(x)  # 15
 ```
+#### Arrays and Nested Arrays
+##### Complex Array Operations
+```sanskrit
+परिवर्तन(matrix, [[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+प्रदर्शयति(matrix[0][1])  # 2
+प्रदर्शयति(matrix[1][2])  # 6
+प्रदर्शयति(matrix[2][0])  # 7
+
+परिवर्तन(matrix[1][1], 99)
+प्रदर्शयति(matrix[1][1])  # 99
+
+परिवर्तन(matrix[2], [10, 11, 12])
+प्रदर्शयति(matrix[2][2])  # 12
+```
+##### Mixed-Type Nested Arrays
+```sanskrit
+परिवर्तन(mixedNestedArray, [[1, "two"], [3.0, "four"], [5, 6.7]])
+प्रदर्शयति(mixedNestedArray[0][1])  # "two"
+प्रदर्शयति(mixedNestedArray[1][0])  # 3.0
+प्रदर्शयति(mixedNestedArray[2][1])  # 6.7
+
+परिवर्तन(mixedNestedArray[1][1], "changed")
+प्रदर्शयति(mixedNestedArray[1][1])  # "changed"
+```
+##### Array Iteration and Modification
+```sanskrit
+परिवर्तन(array, [10, 20, 30, 40, 50])
+परिवर्तन(i, 0)
+यावत् (i < 5) {
+    परिवर्तन(array[i], योजयति(array[i], 1))
+    परिवर्तन(i, योजयति(i, 1))
+}
+प्रदर्शयति(array[0])  # 11
+प्रदर्शयति(array[1])  # 21
+प्रदर्शयति(array[2])  # 31
+प्रदर्शयति(array[3])  # 41
+प्रदर्शयति(array[4])  # 51
+```
+##### Array of Arrays Assignment
+```sanskrit
+परिवर्तन(array1, [1, 2, 3])
+परिवर्तन(array2, [4, 5, 6])
+परिवर्तन(array3, [7, 8, 9])
+परिवर्तन(nestedArrays, [array1, array2, array3])
+
+प्रदर्शयति(nestedArrays[0][1])  # 2
+प्रदर्शयति(nestedArrays[1][1])  # 5
+प्रदर्शयति(nestedArrays[2][1])  # 8
+```
+##### Loop through Nested Arrays
+```sanskrit
+परिवर्तन(matrix, [[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+परिवर्तन(i, 0)
+यावत् (i < 3) {
+    परिवर्तन(j, 0)
+    यावत् (j < 3) {
+        परिवर्तन(matrix[i][j], गुणयति(matrix[i][j], 2))
+        परिवर्तन(j, योजयति(j, 1))
+    }
+    परिवर्तन(i, योजयति(i, 1))
+}
+प्रदर्शयति(matrix[0][0])  # 2
+प्रदर्शयति(matrix[1][1])  # 10
+प्रदर्शयति(matrix[2][2])  # 18
+```
+##### Nested Arrays with Different Data Types
+```sanskrit
+परिवर्तन(mixedMatrix, [[1, "a"], [2.5, "b"], ["c", 3]])
+प्रदर्शयति(mixedMatrix[0][1])  # "a"
+प्रदर्शयति(mixedMatrix[1][0])  # 2.5
+प्रदर्शयति(mixedMatrix[2][1])  # 3
+
+परिवर्तन(mixedMatrix[1][1], "updated")
+प्रदर्शयति(mixedMatrix[1][1])  # "updated"
+```
+
 #### Running the Interpreter
 Run your interpreter script:
 ```sh
