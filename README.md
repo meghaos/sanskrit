@@ -37,8 +37,8 @@ To run the Sanskrit programming language interpreter, follow these steps:
 
 1. **Clone the repository**:
     ```sh
-    git clone https://github.com/meghaos/SanskritLang.git
-    cd SanskritLang
+    git clone https://github.com/meghaos/Sanskrit.git
+    cd Sanskrit
     ```
 
 2. **Create and activate a virtual environment**:
