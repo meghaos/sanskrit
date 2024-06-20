@@ -20,7 +20,7 @@ This is a simple programming language based on Sanskrit, designed to demonstrate
   - Greater than or equal to: `>=`
 - **Conditional Statements**: `यदि` and `अन्यथा`
 - **Loops**: `यावत्`
-- **String Literals**
+- **String Literals**: `""` Strings are enclosed in double quotes.
 - **Block Statements**: `{}`
 
 ## Installation
@@ -29,7 +29,7 @@ To run the Sanskrit programming language interpreter, follow these steps:
 
 1. **Clone the repository**:
     ```sh
-    git clone https://github.com/yourusername/SanskritLang.git
+    git clone https://github.com/meghaos/SanskritLang.git
     cd SanskritLang
     ```
 
@@ -105,11 +105,11 @@ python interpreter.py
 
 Make sure the test.s file contains your Sanskrit code. The interpreter will read this file, parse the code, and execute it.
 
-License
+License:
 This project is licensed under the GNU General Public License Version 2. See the LICENSE file for details.
 
-<h2>Contributing<h2>
+Contributing:
 Contributions are welcome! Please create a pull request with your changes and ensure that your code follows the existing coding style.
 
-Acknowledgements
+Acknowledgements:
 This project is inspired by the rich linguistic heritage of Sanskrit and is designed as a fun way to learn and explore programming concepts.
