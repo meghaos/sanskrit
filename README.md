@@ -107,7 +107,6 @@ Here are some example codes to demonstrate the features of the language:
 #### Running the Interpreter
 Run your interpreter script:
 ```sh
-Copy code
 python interpreter.py
 ```
 
