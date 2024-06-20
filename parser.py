@@ -1,5 +1,5 @@
 from lexer import lex
-from ast import Program, Print, Assign, BinOp, Number, Identifier, String, If, Comparison, While, Block
+from ast import Program, Print, Assign, BinOp, Number, Float, Identifier, String, If, Comparison, While, Block, Break, Continue, Array, ArrayAccess
 
 def parse(tokens):
     tokens = list(tokens)
@@ -46,15 +46,31 @@ def parse(tokens):
 
     def parse_factor():
         token = peek()
-        if token[0] == 'NUMBER':
+        if token[0] == 'FLOAT':
+            advance()
+            return Float(float(token[1]))
+        elif token[0] == 'NUMBER':
             advance()
             return Number(int(token[1]))
         elif token[0] == 'ID':
+            id_token = token
             advance()
-            return Identifier(token[1])
+            if peek()[0] == 'LBRACKET':
+                return parse_array_access(Identifier(id_token[1]))
+            return Identifier(id_token[1])
         elif token[0] == 'STRING':
             advance()
             return String(token[1][1:-1])  # Remove the surrounding quotes
+        elif token[0] == 'LBRACKET':
+            advance()
+            elements = []
+            while peek()[0] != 'RBRACKET':
+                elements.append(parse_expression())
+                if peek()[0] == 'COMMA':
+                    advance()
+            assert peek()[0] == 'RBRACKET'
+            advance()
+            return Array(elements)
         elif token[0] in ('ADD', 'SUB', 'MUL', 'DIV'):  # Handling nested expressions
             advance()
             assert peek()[0] == 'LPAREN'
@@ -68,6 +84,17 @@ def parse(tokens):
             return BinOp(left, token[0], right)
         else:
             raise SyntaxError(f'Expected term, got {token}')
+
+    def parse_array_access(array):
+        assert peek()[0] == 'LBRACKET'
+        advance()
+        index = parse_expression()
+        assert peek()[0] == 'RBRACKET'
+        advance()
+        array_access = ArrayAccess(array, index)
+        if peek()[0] == 'LBRACKET':
+            return parse_array_access(array_access)
+        return array_access
 
     def parse_comparison():
         left = parse_expression()
@@ -97,10 +124,9 @@ def parse(tokens):
             if peek()[0] != 'LPAREN':
                 raise SyntaxError('Expected LPAREN after ASSIGN')
             advance()
-            name = peek()
-            if name[0] != 'ID':
-                raise SyntaxError('Expected ID for assignment')
-            advance()
+            name = parse_factor()
+            if not isinstance(name, (Identifier, ArrayAccess)):
+                raise SyntaxError('Expected ID or ArrayAccess for assignment')
             if peek()[0] != 'COMMA':
                 raise SyntaxError('Expected COMMA after ID in assignment')
             advance()
@@ -108,7 +134,7 @@ def parse(tokens):
             if peek()[0] != 'RPAREN':
                 raise SyntaxError('Expected RPAREN after value in assignment')
             advance()
-            return Assign(name[1], value)
+            return Assign(name, value)
         elif token[0] == 'IF':
             advance()
             if peek()[0] != 'LPAREN':
@@ -135,6 +161,12 @@ def parse(tokens):
             advance()
             body = parse_statement()
             return While(condition, body)
+        elif token[0] == 'BREAK':
+            advance()
+            return Break()
+        elif token[0] == 'CONTINUE':
+            advance()
+            return Continue()
         elif token[0] == 'LBRACE':
             return parse_block()
         else:

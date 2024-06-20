@@ -1,6 +1,12 @@
 from parser import parse
 from lexer import lex
-from ast import Program, Print, Assign, BinOp, Number, Identifier, String, If, Comparison, While, Block
+from ast import Program, Print, Assign, BinOp, Number, Float, Identifier, String, If, Comparison, While, Block, Break, Continue, Array, ArrayAccess
+
+class BreakException(Exception):
+    pass
+
+class ContinueException(Exception):
+    pass
 
 class Interpreter:
     def __init__(self):
@@ -17,8 +23,14 @@ class Interpreter:
             value = self.eval(node.expression)
             print(value)
         elif isinstance(node, Assign):
-            value = self.eval(node.value)
-            self.environment[node.name] = value
+            if isinstance(node.name, ArrayAccess):
+                array = self.get_array(node.name)
+                index = self.eval(node.name.index)
+                value = self.eval(node.value)
+                array[index] = value
+            else:
+                value = self.eval(node.value)
+                self.environment[node.name.name] = value
         elif isinstance(node, BinOp):
             left = self.eval(node.left)
             right = self.eval(node.right)
@@ -31,6 +43,8 @@ class Interpreter:
             elif node.op == 'DIV':
                 return left / right
         elif isinstance(node, Number):
+            return node.value
+        elif isinstance(node, Float):
             return node.value
         elif isinstance(node, Identifier):
             return self.environment[node.name]
@@ -59,9 +73,32 @@ class Interpreter:
                 return left >= right
         elif isinstance(node, While):
             while self.eval(node.condition):
-                self.eval(node.body)
+                try:
+                    self.eval(node.body)
+                except ContinueException:
+                    continue
+                except BreakException:
+                    break
+        elif isinstance(node, Break):
+            raise BreakException()
+        elif isinstance(node, Continue):
+            raise ContinueException()
+        elif isinstance(node, Array):
+            return [self.eval(element) for element in node.elements]
+        elif isinstance(node, ArrayAccess):
+            array = self.get_array(node)
+            index = self.eval(node.index)
+            return array[index]
         else:
             raise RuntimeError(f'Unexpected node: {node}')
+
+    def get_array(self, node):
+        if isinstance(node.array, ArrayAccess):
+            array = self.get_array(node.array)
+            index = self.eval(node.array.index)
+            return array[index]
+        else:
+            return self.environment[node.array.name]
 
 if __name__ == '__main__':
     with open('test.s', 'r', encoding='utf-8') as file:
