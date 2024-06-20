@@ -39,6 +39,13 @@ class Number(Node):
     def __repr__(self):
         return f'Number(value={self.value})'
 
+class Float(Node):
+    def __init__(self, value):
+        self.value = value
+
+    def __repr__(self):
+        return f'Float(value={self.value})'
+
 class Identifier(Node):
     def __init__(self, name):
         self.name = name
@@ -85,3 +92,26 @@ class Block(Node):
 
     def __repr__(self):
         return f'Block(statements={self.statements})'
+
+class Break(Node):
+    def __repr__(self):
+        return 'Break()'
+
+class Continue(Node):
+    def __repr__(self):
+        return 'Continue()'
+
+class Array(Node):
+    def __init__(self, elements):
+        self.elements = elements
+
+    def __repr__(self):
+        return f'Array(elements={self.elements})'
+
+class ArrayAccess(Node):
+    def __init__(self, array, index):
+        self.array = array
+        self.index = index
+
+    def __repr__(self):
+        return f'ArrayAccess(array={self.array}, index={self.index})'
