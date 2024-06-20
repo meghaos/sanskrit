@@ -52,7 +52,7 @@ To run the Sanskrit programming language interpreter, follow these steps:
 
 3. **Install dependencies**:
     ```sh
-    pip install -r requirements.txt
+    pip install ply sphinx pytest
     ```
 
 ## Usage
