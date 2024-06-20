@@ -1,6 +1,14 @@
 # Sanskrit Programming Language
 
-This is a simple programming language based on Sanskrit, designed to demonstrate basic programming constructs such as arithmetic operations, conditionals, loops, and more. This project is a learning tool and a fun way to explore programming concepts using the ancient language of Sanskrit.
+This is a simple programming language based on Sanskrit, designed to demonstrate basic programming constructs such as arithmetic operations, conditionals, loops, and more. This project came from the claim that NASA has conducted research on Sanskrit in the context of AI is widely spread. While it cannot be definitively confirmed, In 1985, NASA associate scientist Rick Briggs published a research paper in the spring issue of Artificial Intelligence magazine entitled “Vedic Science — ‘Knowledge Representation in Sanskrit and Artificial Intelligence.’” The article argued that natural languages are the best option to be converted into the computing program for robotic control and artificial intelligence technology.
+
+ Briggs also argued that Sanskrit is particularly well-suited for this task because of its highly structured grammar and its ability to express complex ideas in a concise and unambiguous way He even went so far as to suggest that Sanskrit could one day be used as the primary programming language for artificial intelligence.
+
+For example, in 2017, a team of researchers at the Indian Institute of Technology Bombay developed a Sanskrit natural language processing toolkit called SanskritNLP. This toolkit can be used to perform a variety of natural language processing tasks, such as text classification, sentiment analysis, and machine translation.
+
+In 2018, a team of researchers at the University of California, Berkeley developed a Sanskrit-English machine translation system that was shown to be more accurate than existing state-of-the-art systems. 
+
+These are just a few examples of the growing interest in using Sanskrit for natural language processing and artificial intelligence applications. It is possible that Sanskrit could one day be used in coding as it is more efficient in complex algorithms as well but more research is needed to develop the necessary technologies. This is my initiative to explore programming concepts using the ancient language of Sanskrit. I invite all coding enthusiat
 
 ## Features
 
