@@ -32,6 +32,7 @@ These are just a few examples of the growing interest in using Sanskrit for natu
 - **Block Statements**: `{}`
 - **Break and continue statements**: `ब्रेक` and `कंटिन्यू`
 - **Arrays and nested arrays**: `[0,1,2,3]` and `[[1, 2, 3], [4, 5, 6], [7, 8, 9]]`
+- **Functions and Procedures**: Function definition `कार्य` and Function call `कॉल`
 - **Mixed data types in arrays**: `INT`, `FLOAT` and `STRING`
 
 ## Installation
@@ -189,6 +190,93 @@ Here are some example codes to demonstrate the features of the language:
 
 परिवर्तन(mixedMatrix[1][1], "updated")
 प्रदर्शयति(mixedMatrix[1][1])  # "updated"
+```
+
+#### Functions and Procedures
+##### Simple Function Definition and Call
+```sanskrit
+कार्य(मेरा_कार्य) {
+    प्रदर्शयति("कार्य से नमस्ते")
+}
+
+कॉल(मेरा_कार्य)
+```
+##### Function with Variable Assignment
+```sanskrit
+कार्य(सहायक_कार्य) {
+    परिवर्तन(x, 10)
+    प्रदर्शयति(x)
+}
+
+कॉल(सहायक_कार्य)
+```
+##### Function with Arithmetic Operations
+```sanskrit
+कार्य(गणित_कार्य) {
+    परिवर्तन(a, 5)
+    परिवर्तन(b, 3)
+    परिवर्तन(c, योजयति(a, b))
+    प्रदर्शयति(c)
+}
+
+कॉल(गणित_कार्य)
+```
+##### Function with Conditional Statements
+```sanskrit
+कार्य(जांच_कार्य) {
+    परिवर्तन(x, 10)
+    यदि (x > 5) {
+        प्रदर्शयति("x is greater than 5")
+    } अन्यथा {
+        प्रदर्शयति("x is not greater than 5")
+    }
+}
+
+कॉल(जांच_कार्य)
+```
+##### Function with Loop
+```sanskrit
+कार्य(लूप_कार्य) {
+    परिवर्तन(x, 0)
+    यावत् (x < 5) {
+        प्रदर्शयति(x)
+        परिवर्तन(x, योजयति(x, 1))
+    }
+}
+
+कॉल(लूप_कार्य)
+```
+##### Nested Function Calls
+```sanskrit
+कार्य(बाहरी_कार्य) {
+    प्रदर्शयति("बाहरी कार्य")
+    कॉल(आंतरिक_कार्य)
+}
+
+कार्य(आंतरिक_कार्य) {
+    प्रदर्शयति("आंतरिक कार्य")
+}
+
+कॉल(बाहरी_कार्य)
+```
+##### Function with Array Access
+```sanskrit
+कार्य(सरणी_कार्य) {
+    परिवर्तन(arr, [1, 2, 3, 4, 5])
+    प्रदर्शयति(arr[2])  # Expected output: 3
+}
+
+कॉल(सरणी_कार्य)
+```
+##### Function with Nested Array Access
+```sanskrit
+कार्य(नेस्टेड_सरणी_कार्य) {
+    परिवर्तन(matrix, [[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+    प्रदर्शयति(matrix[1][2])  # Expected output: 6
+}
+
+कॉल(नेस्टेड_सरणी_कार्य)
+
 ```
 
 #### Running the Interpreter
