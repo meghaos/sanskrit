@@ -1,5 +1,5 @@
 from lexer import lex
-from ast import Program, Print, Assign, BinOp, Number, Float, Identifier, String, If, Comparison, While, Block, Break, Continue, Array, ArrayAccess
+from ast import Program, Print, Assign, BinOp, Number, Float, Identifier, String, If, Comparison, While, Block, Break, Continue, Array, ArrayAccess, FunctionDef, FunctionCall
 
 def parse(tokens):
     tokens = list(tokens)
@@ -169,6 +169,35 @@ def parse(tokens):
             return Continue()
         elif token[0] == 'LBRACE':
             return parse_block()
+        elif token[0] == 'FUNCTION':
+            advance()
+            if peek()[0] != 'LPAREN':
+                raise SyntaxError('Expected LPAREN after FUNCTION')
+            advance()
+            if peek()[0] != 'ID':
+                raise SyntaxError('Expected ID after LPAREN')
+            func_name = Identifier(peek()[1])
+            advance()
+            if peek()[0] != 'RPAREN':
+                raise SyntaxError('Expected RPAREN after FUNCTION name')
+            advance()
+            if peek()[0] != 'LBRACE':
+                raise SyntaxError('Expected LBRACE after FUNCTION declaration')
+            func_body = parse_block()
+            return FunctionDef(func_name, func_body)
+        elif token[0] == 'CALL':
+            advance()
+            if peek()[0] != 'LPAREN':
+                raise SyntaxError('Expected LPAREN after CALL')
+            advance()
+            if peek()[0] != 'ID':
+                raise SyntaxError('Expected ID after LPAREN')
+            func_name = Identifier(peek()[1])
+            advance()
+            if peek()[0] != 'RPAREN':
+                raise SyntaxError('Expected RPAREN after FUNCTION name')
+            advance()
+            return FunctionCall(func_name)
         else:
             raise SyntaxError(f'Expected statement, got {token}')
 
@@ -183,7 +212,5 @@ if __name__ == '__main__':
         code = file.read()
 
     tokens = lex(code)
-    for token in tokens:
-        print(token)
     ast = parse(tokens)
     print(ast)

@@ -12,9 +12,11 @@ tokens = [
     ('WHILE', r'यावत्'),
     ('BREAK', r'ब्रेक'),
     ('CONTINUE', r'कंटिन्यू'),
+    ('FUNCTION', r'कार्य'),
+    ('CALL', r'कॉल'),
     ('FLOAT', r'\d+\.\d+'),
     ('NUMBER', r'\d+'),
-    ('ID', r'[a-zA-Z_][a-zA-Z0-9_]*'),
+    ('ID', r'[a-zA-Z_अ-हऀ-ॿ_][a-zA-Z0-9_अ-हऀ-ॿ_]*'),
     ('LPAREN', r'\('),
     ('RPAREN', r'\)'),
     ('LBRACE', r'\{'),
@@ -53,6 +55,6 @@ def lex(characters):
             pos += 1
 
 if __name__ == '__main__':
-    code = 'परिवर्तन(x, 5)\nप्रदर्शयति(x)\nयावत् (x < 10) { परिवर्तन(x, योजयति(x, 1)) }\nप्रदर्शयति(x)\n'
+    code = 'कार्य(मेरा_कार्य) {\n    प्रदर्शयति("कार्य से नमस्ते")\n}\n\nकॉल(मेरा_कार्य)\n'
     for token in lex(code):
         print(token)

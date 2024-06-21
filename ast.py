@@ -115,3 +115,18 @@ class ArrayAccess(Node):
 
     def __repr__(self):
         return f'ArrayAccess(array={self.array}, index={self.index})'
+
+class FunctionDef(Node):
+    def __init__(self, name, body):
+        self.name = name
+        self.body = body
+
+    def __repr__(self):
+        return f'FunctionDef(name={self.name}, body={self.body})'
+
+class FunctionCall(Node):
+    def __init__(self, name):
+        self.name = name
+
+    def __repr__(self):
+        return f'FunctionCall(name={self.name})'
